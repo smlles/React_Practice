@@ -1,23 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import Counter from './hook/UseStateEx';
+import TimerFunction,{UserList,Count} from './hook/UseEffectEx';
+import {Counter_ref,InputFocus,InputSample} from './hook/UseRefEx'
+import {Sol1,Exam} from './hook/Exam';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InputSample />
     </div>
   );
 }
