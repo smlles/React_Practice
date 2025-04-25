@@ -112,4 +112,35 @@ export const Count = () =>{
     </div>
   )
 }
+
+export const Cleanup = (props) => {
+  //외부 정보는 읽기 전용
+  const [value,setValue] = useState(props.value);
+
+  //App.js에서 value받아서 화면에 출력
+  useEffect(()=>{
+    console.log(`▶ 이펙트 실행 : ${value}`)
+
+    //클린업 함수
+    //사이드 이펙트 함수의 return에 들어가는 함수
+    return ()=>{
+      console.log(`▷정리(cleanUp): ${value}`)
+    }
+  },[value]);
+
+  return(
+    <div>
+      <p>현재 value : {value}</p>
+      <button onClick={()=>setValue(v=>v+1)}>value 증가</button>
+    </div>
+  )
+}
+
+
+
+
+
+
+
+
 export default TimerFunction;
